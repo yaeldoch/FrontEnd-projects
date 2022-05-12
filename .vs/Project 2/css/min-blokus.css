@@ -1,0 +1,121 @@
+body {
+     height: 100vh;
+     overflow: hidden;
+ }
+
+main{
+    grid-template-rows: 100px auto 100px;
+    grid-template: 
+    'others'
+    'board'
+    'cur';
+
+}
+
+main > #gameboard{
+    grid-area: board;
+    position: relative;
+    margin: auto;
+}
+
+main>#otherPlayers{
+    flex-direction: row;
+    grid-area: others;
+
+}
+.curPlayersShapes{
+    height: 15vh;
+    width: 100%;
+    flex-direction: row;
+    grid-area: cur;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+} 
+
+/*game parts*/
+
+table[class^='player'] {
+   margin: 0  15px;
+}
+
+
+/* game parts end*/
+
+/* board*/
+#gameboard table td {
+    height: calc(45vw / 20);
+    min-width: calc(45vw / 20);
+    box-shadow: 0 0 1px;
+}
+
+/* cur player pic */
+#curPlayer .playerDetails {
+    height: calc(var(--sq-size) * 3);
+    width: calc(var(--sq-size) * 3);
+    background-color: white;
+    position: absolute;
+    bottom: 5vh;
+    left: 6vw;
+    border-radius: 50%;
+    background-size: contain;
+}
+
+#curPlayer .playerDetails::before {
+    box-sizing: border-box;
+    content: '';
+    border: 3px solid transparent;
+    border-top-color: var(--player-color);
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+    animation: current-player 3s linear infinite; 
+    position: absolute;
+}
+
+@keyframes current-player {
+    100% {transform: rotate(360deg);}
+}
+
+/* other players*/
+[id^="next"]{
+    height: 90px;
+    width:90px;
+    display:inline-block;
+    background: white;
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    border: 3px solid var(--player-color);
+    box-shadow: var(--shadow);
+    position: relative;
+    right: 5vw;
+    margin: 7vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+[class^="next"].playerShapes{
+    top: 0;
+    height: 80vh;
+    width: calc(var(--sq-size) * 5.5);
+    background: white;
+    border-radius: 15px;
+    position: absolute;
+    transition: opacity 0.3s;
+    --sq-size: 25px;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    margin: 10vh 0;
+     box-shadow:  var(--shadow);     
+    display: flex;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Entrance</title>
+    <link rel="stylesheet" href="../css/blokusEntrance.css">
+
+    <link rel="stylesheet" href="../css/blokus2.css">
+    <link rel="icon" href="../img/icon.png">
+   
+</head>
+<body>
+    <form>
+
+           <div id="formTop">
+               <h3>let's play blokus</h3>
+               <div class="top">
+               <input list="data"  placeholder="saved game">
+               <datalist id="data" >
+
+                </datalist>
+             
+                <label for="send1"></label>
+                <a href= "./index.html" id="send1" > go for it!</a>
+                </div>
+                
+                <p>or</p>
+
+            <label for="human"> </label>
+            <input type="number" name="human" id="human"   min="0" max="4" placeholder="human players">
+           
+            <label for="game-name"></label>
+            <input type="text" name="game-name" id="game-name"  placeholder="game name">
+          
+          
+        </div>
+            <div id="playerContainer">
+           
+            
+            <div id= "player1" class="PlayerSpecify">
+            <h4> player #1</h4>
+            
+            <label for="mail1"></label>
+            <input type="email" name="mail1" id="mail1"  placeholder="email" readonly>
+            <label for="password1"></label>
+            <input type="password" name="password1" id="password1" placeholder="password" readonly>
+            </div>
+            <div id= "player2" class="PlayerSpecify">
+                <h4> player #2</h4>
+                
+             
+                <label for="mail2"></label>
+                <input type="email" name="mail2" id="mail2"  placeholder="email">
+                <label for="password1"></label>
+                <input type="password" name="password2" id="password2" placeholder="password" >
+                </div>
+                <div id= "player3" class="PlayerSpecify">
+                    <h4> player #3</h4>
+                   
+                   
+                    <label for="mail3"></label>
+                    <input type="email" name="mail3" id="mail3"  placeholder="email">
+                    <label for="password1"></label>
+                    <input type="password" name="password3" id="password3" placeholder="password" >
+                    </div>
+                    <div id= "player4" class="PlayerSpecify">
+                        <h4> player #4</h4>
+                       
+                    
+                        <label for="mail4"></label>
+                        <input type="email" name="mail4" id="mail4"  placeholder="email">
+                        <label for="password1"></label>
+                        <input type="password" name="password4" id="password4" placeholder="password">
+                        </div>
+            
+                    <label for="show" >show our pictures while playing</label>
+                    <input type="checkbox" name="show" id="show"> 
+                    <label for="send" ></label>
+                    <a href="./index.html" id="send">start</a>
+    </form>
+
+
+
+    <!-- <script src="../js/blokus2E.js"></script> -->
+    <script src="../js/script.js"></script>
+    <script src="../js/blokusEntrance.js"></script>
+   
+   
+</body>
+</html>

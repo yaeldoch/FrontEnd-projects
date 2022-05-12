@@ -1,0 +1,105 @@
+:root {
+    --red: #ff5562;
+    --l-red: #ffbdc5;
+    --blue: #3fa9f5;
+    --l-blue: #bbe5ff;
+    --green: #8de26d;
+    --l-green: #ccffc0;
+    --yellow: #fff200;
+    --l-yellow: #fffcc0;
+    --sq-size: 30px;
+    --shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+}
+*:focus{
+    outline: none !important;
+}
+body{
+    height: 100vh;
+    display:grid;
+    grid-template-rows: repeat(12, 1fr);
+}
+
+#overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    animation: fade 0.5s ease 0s 1 both;
+}
+
+#modal {
+    position: fixed;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10vh 5vw;
+    text-align: center;
+    animation: slide .5s ease 0s 1 both;
+}
+
+#modal.alert::before {
+    content: '⛔';
+    background-color: #ff5562;
+}
+
+#modal.suc::before {
+    content: '✔';
+    background-color: #8de26d;
+}
+
+#modal.info::before {
+    content: '👈';
+    background-color: #3fa9f5;
+}
+
+#modal.warn::before {
+    content: '💡';
+    background-color: #fffcc0;
+}
+#modal::before {
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: calibri;
+}
+
+a {
+    height: 18vh;
+    width: 89vh;
+    position: absolute;
+    top: 28vh;
+    z-index: 1;
+}
+
+@keyframes fade{
+    from {opacity: 0}
+    to {opacity: 1;}
+}
+@keyframes fade-out{
+    from {opacity: 1}
+    to {opacity: 0;}
+}
+
+@keyframes slide {
+    from {top: -50vh}
+    to {top: 0}
+}
+
+@keyframes slide-out {
+    from {top: 0}
+    to {top: -50vh}
+}

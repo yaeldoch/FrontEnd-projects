@@ -1,0 +1,207 @@
+$xlt-gray: #efefef;
+$red: #f44336;
+$blue: #1e88e5;
+$yellow: #fdd835;
+
+$hoverTranslate: 12px;
+
+$container-size: 360px;
+$block-size: 64px;
+
+$ease: cubic-bezier(0.4, 0.0, 0.0, 1);
+$ease-in: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background: darken($xlt-gray, 3%);
+  height: 100vh;
+  display: flex;
+}
+
+.grid-view {
+  transform: scale(.75);
+}
+
+.block-wrap {
+  width: $container-size;
+  height: $container-size;
+  background: $xlt-gray;
+  border-bottom: 2px solid darken($xlt-gray, 15%);
+  box-shadow:
+      inset 0 1px 0 lighten($xlt-gray, 5%),
+      0 8px 8px -8px darken($xlt-gray, 15%),
+      0 12px 12px -8px darken($xlt-gray, 5%);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  border-radius: 8px;
+  margin: auto;
+}
+
+
+.block-col {
+  display: flex;
+  height: 100%;
+  margin: 0 12px;
+  width: $block-size; //holds width when blocks are pos:abs
+  flex-shrink: 0;
+}
+
+.block {
+  height: $block-size;
+  width: 100%;
+  border-radius: 8px;
+  margin: auto 0;
+  position: relative;
+  will-change: transform;
+  &:not(.block--active) {
+    cursor: pointer;
+    &:hover, &.fake-hover {
+      transform: translateY(-$hoverTranslate);
+      &:after {
+        // prevents awkard jittering on hover
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: scale(1.1) translateY($hoverTranslate);
+      }
+    }
+    &:active {
+      transform: scale(0.9) translateY(-$hoverTranslate);
+    }
+  }
+
+  &--active {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+  }
+
+  &--transition {
+    transition: transform 0.185s $ease;
+  }
+}
+
+.block-content {
+  display: none;
+  padding: 24px;
+  .block--active & {
+    display: block;
+  }
+}
+
+.block-content__header {
+  background: rgba(black, .1);
+  padding: 24px;
+  margin: -24px -24px 24px;
+  overflow: hidden;
+}
+
+.block-content__header__text {
+  will-change: transform;
+  margin: 0;
+  opacity: 0;
+  font-size: 2em;
+  .block--active & {
+    animation: content-in .225s $ease-in forwards; 
+    animation-delay: .15s;
+  }
+}
+
+.block-content__body {
+  will-change: transform;
+  opacity: 0;
+  font-size: 18px;
+  line-height: 1.333;
+  animation: content-in .245s $ease-in forwards; 
+  animation-delay: .1s;
+  margin: 0 0 20px;
+}
+
+.block-content__button {
+    font-weight: bold;
+    background: rgba(255, 255, 255, .25);
+    display: inline-block;
+    padding: 16px;
+    border-radius: 4px;
+    color: rgba(#fff, .85);
+    animation: button-in .245s $ease-in forwards; 
+    animation-delay: .2s;
+    opacity: 0;
+    cursor: pointer;
+}
+
+@keyframes content-in {
+  0% {
+    opacity: 0;
+    transform: translateY(128px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes button-in {
+  0% {
+    opacity: 0;
+    transform: translateY(64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@mixin colored($color) {
+  background: $color;
+  color: darken($color, 45%);
+  border-top: 2px solid lighten($color, 10%);
+
+  &:not(.block--active) {
+    border-bottom: 2px solid darken($color, 10%);
+    box-shadow:
+      0 8px 8px -8px darken($color, 15%),
+      0 12px 12px -8px rgba($color, 0.4);
+  }
+
+  &.block--active {
+    background: desaturate(lighten($color, 37.5%), 40%);
+  }
+  
+  .block-content__header {
+    background: $color;
+  }
+  
+  .block-content__button {
+    background: $color;
+    border-bottom: 2px solid darken($color, 10%);
+    border-top: 2px solid lighten($color, 10%);
+  }
+}
+
+.r {
+  @include colored($red);
+}
+
+.b {
+  @include colored($blue);
+}
+
+.y {
+  @include colored($yellow);
+}
