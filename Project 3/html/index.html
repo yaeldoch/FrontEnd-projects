@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tasks director</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../utilities/todo-list-ui-with-vuejs/dist/style.css">
+  <link rel="stylesheet" href="../utilities/todo-list-ui-with-vuejs/dist/style.css">
+  <link rel="stylesheet" href="../utilities/smartphone-html-css/dist/style.css">
+  <link rel="stylesheet" href="../utilities/font-awesome/fontawesome-free-5.15.1-web/css/all.css">
+</head>
+
+<body id="all-page">
+  <div class="smart">
+    <div id="dettaglio">
+    <div id="sensore"></div>
+    <div id="microfono"></div>
+  </div>
+  <div id="acenzione-button"></div>
+  <div id="volume-su"></div>
+  <div id="volume-giu"></div>
+  <div id="schermo">
+    <div id= "black" ></div>
+  <div class="frame-posizione">
+    <div id="header">
+  <div class="wrap">
+  <div id="menu" class="menu-responsive">
+       <ul>
+            <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">WORK</a></li>
+                  </ul>
+  <div class="three-lines-menu"> &#9776;</div>
+  <a href="#" class="nav-link" data-target="Game" id="listlink">My tasks for today</a>
+  </div><!-- fine schermo -->
+  
+      </div><!-- fine frame-posizione -->
+    </div><!-- fine header -->
+    <main>
+      <a href="#" class="nav-link page active" data-target="login" >login</a>
+      <br>
+      <a href="#" class="page active nav-link" data-target="SignUp">SignUp</a>
+      
+        
+        <div class="page hide" id="login" style="top: 11%;">
+        <form class="login">
+          <div class="inputbox">
+            <input type="text" name="email" placeholder="EMAIL" id="email" required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"> </div>
+              <div class="inputbox">
+            <input type="password" name="password" placeholder="PASSWORD" id="password" required min="5" max="10">
+          </div>
+          <div class="mistake" id="first">
+            <p></p>
+          </div>
+          <input type="submit" id="log-in" value="LOG IN" class="button logintn inputbox nav-link" onclick ="LoginButton()"
+            data-target="login"></button>
+        
+        </form>
+        <br><br>
+        <a href="#" class="nav-link" style="padding-left: 55px;
+        font-size: 80%;"data-target="SignUp">dont have an account? SignUp</a>
+      </div>
+  
+  
+        
+      
+  
+      <div class="page" id="SignUp" style="top: 11%;">
+        
+        <form class="signup hide">
+          <div class="inputbox">
+            
+            <div> <input type="text" name="email" placeholder="EMAIL" id="email2" required
+                pattern="[@]{1},[a-z,A-Z],[0-9]"></div>
+            <div> <input type="password" name="password" placeholder="PASSWORD" id="password2" required min="5"
+                max="10"></div>
+                <div>
+                <input type="submit" id="sign-up" value="SIGN UP" class="button logintn nav-link" onclick ="signUpButton()"
+            data-target="SignUp"></button></div>
+          </div>
+          <div class="mistake" id="second">
+            <p></p>
+          </div>
+          </form>
+  
+          
+      </div>
+      <div id="Game" class="page">
+        <div id="todolist">
+          <h1 id="header1">
+            Todo List
+            <span>Get things done, one item at a time.</span>
+          </h1>
+  
+          <template v-if="todo.length">
+            <transition-group name="todolist" tag="ul">
+              <li v-for="item in todoByStatus" v-bind:class="item.done ? 'done' : ''" v-bind:key="item.id">
+                <input class="label" :id ="'input_' + item.id" v-on:change="putTask(item.id)"v-bind:value="item.label"></input>
+                <div class="actions">
+                  <button class="btn-picto" type="button" v-on:click="markAsDoneOrUndone(item)"
+                    v-bind:aria-label="item.done ? 'Undone' : 'Done'" v-bind:title="item.done ? 'Undone' : 'Done'">
+                    <i aria-hidden="true" class="material-icons">{{ item.done ? `yes` : 'no'
+                      }}</i>
+                  </button>
+                  <button class="btn-picto" type="button" v-on:click="deleteItemFromList(item); deleteItem(item.id)"
+                    aria-label="Delete" title="Delete">
+                    <i aria-hidden="true" class="material-icons">fas fa-bars</i>
+                  </button>
+                </div>
+              </li>
+            </transition-group>
+            <togglebutton label="Move done items at the end?" name="todosort" v-on:clicked="clickontoogle" id="question"/>
+          </template>
+          <p v-else class="emptylist">Your todo list is empty.</p>
+  
+          <form name="newform" v-on:submit.prevent="addItem">
+            <label for="newitem">Add to the todo list</label>
+            <input type="text" name="newitem" id="newitem" v-model="newitem">
+            <button type="submit" onclick="console.log('dfs'); addItem()">Add item</button>
+          </form>
+        </div>
+  
+        </form>
+      </div>
+  
+    </main>
+  </div><!-- fine wrap-->
+  </div><!-- fine menu-responsive menu-->
+  <div id="bottone"></div>
+  <script src="../utilities/smartphone-html-css/dist/script.js"></script>
+  <script src="../utilities/todo-list-ui-with-vuejs/dist/script2.js"></script>
+  <script src="../utilities/todo-list-ui-with-vuejs/dist/script.js"></script>
+
+  <script src="../js/client/spa.js"></script>
+  <script src="../js/server/server.js"></script>
+  <script src="../js/server/DBapi.js"></script>
+  <script src="../js/server/Fajax.js"></script>
+  <script src="../js/server/classes.js"></script>
+  <script src="../js/client/Client.js"></script>
+
+
+
+
+</body>
+
+</html>
