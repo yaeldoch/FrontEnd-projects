@@ -1,0 +1,26 @@
+.container{
+
+    flex-direction: column;
+    
+
+}
+.item-left{
+ 
+    height: 25px;
+  
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.item-right{
+   height: 90%;
+
+}
+.item-left>p{
+   margin:0px;
+
+}
+.link1{
+    display: none;
+}

@@ -1,0 +1,43 @@
+main>.product{
+    width: 90%;
+    height:8%;
+    margin-bottom: 2%;
+}
+main{
+    justify-content: space-evenly;
+    /* margin-bottom: 50px; */
+}
+.image{
+    height: 60%;
+    margin:2%;
+    border-radius:10%;
+}
+
+
+.pDis>p {
+    
+    text-align: center;
+}
+header{
+    
+    justify-content: space-evenly;
+    
+}
+.logo{ 
+    margin-left:0%;
+    margin-right:0%;
+}
+
+.info1{
+    display: none;
+}
+footer>.border{
+
+    display: none;
+}
+.info{
+    margin-top: 0px;
+}
+#last{
+    display:none;
+}

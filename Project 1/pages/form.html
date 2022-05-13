@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/formStyle.css">
+    <link rel="stylesheet" href="../style/formSmall.css" media="(max-width: 600px)">
+    <title>form</title>
+</head>
+<body>
+   
+   
+    <main>
+    
+        
+        <form action="../pages/answer.html" method="get">
+                
+            <div class="signUp"><h2>sign up and contact us:)</h2></div>
+            <div class="border"></div>
+            <div class="details">
+            <input type="text" name="first name" class="block" placeholder="first name" required >
+        
+            <input type="text" name="last name"  class="block"placeholder="family name" required>
+        
+            <input type="number" name="age"  placeholder="age" class="block" >
+
+            <input type="email" name="email"  placeholder="email" class="block" autocomplete="on" required>
+    
+            <input type="password" name="password"  placeholder="password" class="block" required>
+           <br>
+           <div class=" prefer">
+            <label for="choice1">I prefer:</label><br>
+            <input type="radio" name="choice" id="choice1" value="children">
+            <label for="choice2">children books</label>
+            
+            <input type="radio" name="choice" id="choice2" value="adoult">
+            <label for="choice2">adoult books</label><br>
+        </div>
+           
+
+            <input type="text" list="options"  class="block" placeholder="my favouraite kind of books"required>
+            <datalist id ="options">
+                <option value="horizontal books"></option>
+                <option value="emotional books"></option>
+                <option value="'komiks' books"></option>
+                <option value="historical books"></option>
+                <option value="jokes books"></option>
+                <option value="riddles books"></option>
+                <option value="others"></option>
+            </datalist>
+        
+           <select name="select" size="2" multiple class="block"  required>
+               <option value="179">highest route - 179$</option>
+               <option value="99">medium route - 99$</option>
+               <option value="59">standart route - 59$</option>
+               <option value="39">lowest route - 39$</option>
+           </select>
+           <textarea rows="3" cols="26" class="block" value="comments">my comments:</textarea>
+           <div class="block2">
+            <input class="last" type="reset" name="reset" value="clear" >
+            <input  class="last" type="submit" value="send">
+        </div>
+        </div>
+        </form>
+
+        
+    </main>
+   
+</body>
+</html>

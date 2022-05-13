@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: rgba(221, 214, 214, 0.76);
+}
+.border{
+    border: rgba(172, 91, 141, 0.829) solid 1px;
+    background: rgba(172, 91, 141, 0.829);
+}
+main{
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+ 
+ 
+}
+
+form{
+    background-color: rgb(255, 255, 255);
+    width:50% ;
+    padding: 50px;
+    margin: 100px;
+    margin-bottom: 10px;
+    color: rgb(8, 24, 59);
+}
+.signup{
+    box-shadow: 2px 5px 5px grey;
+}
+.details{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.border{
+    width: 100%;
+    border: 1px solid rgb(199, 198, 198);
+}
+
+.block{
+  
+    width: 40%;
+    height:5%;
+    color:rgb(12, 12, 12);
+    padding:3px;
+    margin:15px;
+    justify-items: center;
+    font-family: Bahnschrift;
+    padding:2%;
+
+}
+.block::placeholder{
+    font-family: Bahnschrift;
+    opacity:50%;
+}
+.choice{
+    display: inline;
+}
+
+footer{
+    background: rgb(107, 223, 142);
+}
+
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 80px;
+}
+
+.prefer{
+    line-height: 150%;
+    text-align: center;
+    font-family: Bahnschrift;
+}
+
+.signIn{
+    text-align: center;
+    font-size: 40px;
+}
+.fromIn{
+    margin-bottom: 400px;  
+}
+.block2{
+    margin:0;
+}
+.thanks{
+    text-align: center;
+    font: 5em  Comic Sans MS,Blackadder ITC;
+    font-size: 80px;
+    transition: all 0.5s ease;
+}
+.main1{
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+.images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    transition: all 0.8s ease;
+}
+.botton>a{
+    background:yellow;
+    border-radius: 10%;
+    width: 100px;
+    height: 60px;
+    margin:20px;
+    font-family: Art;
+    text-decoration: none;
+    
+    
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-start;
+    color: black;
+    
+}
+.last{
+    padding: 10px;
+    background: rgb(255, 217, 0);
+    border-radius: 10%;
+    
+}

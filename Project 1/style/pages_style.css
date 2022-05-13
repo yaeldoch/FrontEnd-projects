@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+.link{
+    line-height:2px;
+    background-color: rgba(150, 160, 160, 0.671);
+    padding: 10px;
+    color: rgb(1, 30, 32);
+    text-decoration: none;
+    font-family: Berlin Sans FB,Arial, Helvetica, sans-serif;
+}
+.iframePage{
+    height:100vh;
+    position: relative; 
+    margin-top: 50px;
+    transition:all 0s ease;
+}
+
+h2{
+    text-align: center;
+    font-family: Berlin Sans FB,Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    padding:20px;
+    margin: 0;
+    box-sizing: border-box;
+  
+    
+}
+h2>a:hover{
+    background: grey;
+ 
+}
+
+
+ 
+
+
+
+
+
+
+
+
+   
+
+    
+ 
+
+    
+

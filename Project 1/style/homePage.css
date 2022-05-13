@@ -1,0 +1,34 @@
+body{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 7% 200% 50%;
+    height: 100vh;
+    grid-gap: 0;
+    margin: 0;
+
+
+}
+header{
+    
+    
+    grid-column: 1/-1;
+   
+
+}
+
+main{
+    
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    
+}
+footer{
+   
+    grid-column: 1/-1;
+    grid-row: 3/-1;
+    
+}
+
+body, html{
+scroll-behavior: smooth;
+}
