@@ -7,6 +7,8 @@ Developing a virtual library which serves far readers
 screen-shot
 
 <img src="./screenshots/HomePageProject1.jpg">
+<img src="./screenshots/ReponsiveProject1.png">
+
 
 ### Project 2
 Blokus strategy game - vanilla js. Can you be smarter than the computer?
