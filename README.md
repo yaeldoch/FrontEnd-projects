@@ -3,4 +3,4 @@
 
 ### Project 1
 Developing a library site
-<img src="./screenshots/HomePageProject1.png" Height:"50px>
+<img src="./screenshots/HomePageProject1.png" height:"50px>
