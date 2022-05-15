@@ -2,16 +2,15 @@
 5 frontend projects with JavaScripts and React
 
 ### Project 1
-Developing a virtual library which serves far readers
+A static responsive HTML and CSS virtual library.
 
 screen-shot
 
 <img src="./screenshots/HomePageProject1.jpg">
-<img src="./screenshots/ReponsiveProject1.png">
 
 
 ### Project 2
-Blokus strategy game - vanilla js. Can you be smarter than the computer?
+Blokus strategy game - vanilla js. Play against the smart computer in an interesting, easy-to-use and butiful game.
 
 screen-shot
 
